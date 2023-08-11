@@ -30,7 +30,7 @@ function ProjectList() {
 }
 
 function Project({ project }) {
-    return <div className="grid text-gray grid-cols-1 divide-y m-0 border border-gray justify-self-center snap-normal snap-center shrink-0 max-w-[19rem]">
+    return <div className="grid text-gray grid-cols-1 divide-y m-0 border border-gray justify-self-center snap-normal snap-center shrink-0 max-w-[19rem] md:max-w-none">
         <img className="object-cover w-96 h-96" src={project.img} />
         <p className="line-clamp-2" >{project.tech.join(', ')}</p>
         <div className="grid p-2 gap-4 mb-3" >
