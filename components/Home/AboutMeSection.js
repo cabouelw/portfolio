@@ -1,5 +1,5 @@
-import logo from "../../public/Icons/Dots.svg"
-import logo1 from "../../public/Icons/AboutMe.png"
+import logo from "../../public/Icons/dots.svg"
+import logo1 from "../../public/Icons/aboutme.png"
 
 export default function AboutMeSection() {
     return (

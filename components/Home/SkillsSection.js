@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import logo from "../../public/Icons/Dots.svg"
-import logo1 from "../../public/Icons/LOGO.svg"
+import logo from "../../public/Icons/dots.svg"
+import logo1 from "../../public/Icons/logo.svg"
 
 export default function SkillsSection() {
     return (

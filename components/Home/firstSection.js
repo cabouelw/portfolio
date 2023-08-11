@@ -1,7 +1,7 @@
-import imageBG from '../../public/Icons/imageBG.svg'
-import Dots from '../../public/Icons/Dots.svg'
-import doubleQ from '../../public/Icons/doubleQ.svg'
-import imageHome from '../../public/Icons/imageN1.svg'
+import imageBG from '../../public/Icons/imagebg.svg'
+import Dots from '../../public/Icons/dots.svg'
+import doubleQ from '../../public/Icons/doubleq.svg'
+import imageHome from '../../public/Icons/imagen1.svg'
 import { Button, Card, CardBody, CardFooter, Dialog, Typography } from "@material-tailwind/react";
 import { useState } from 'react';
 

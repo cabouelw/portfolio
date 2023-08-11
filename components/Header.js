@@ -1,11 +1,11 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react';
 import burger from "../public/Icons/menu.svg"
-import exit from "../public/Icons/Exit.svg"
+import exit from "../public/Icons/exit.svg"
 import git from '../public/Icons/git.svg';
-import linkedin from '../public/Icons/Linkedin.svg';
+import linkedin from '../public/Icons/linkedin.svg';
 import email from '../public/Icons/email.svg';
-import discord from '../public/Icons/Discord.svg';
+import discord from '../public/Icons/discord.svg';
 import Link from 'next/link';
 
 const NavTo = ({ title, hideHandler }) => {

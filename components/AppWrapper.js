@@ -2,7 +2,7 @@ import Header from "./Header";
 import git from '../public/Icons/git.svg';
 import linkedin from '../public/Icons/Linkedin.svg';
 import email from '../public/Icons/email.svg';
-import discord from '../public/Icons/Discord.svg';
+import discord from '../public/Icons/discord.svg';
 import Footer from "./Footer";
 
 
