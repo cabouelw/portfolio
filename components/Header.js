@@ -20,7 +20,7 @@ const NavTo = ({ title, hideHandler }) => {
 
     return (
         <>
-            <Link className={`font-normal ${!selected ? 'text-gray' : 'text-[#fff]'} cursor-pointer hover:text-[#fff]`} href={"#" + title}><span className='text-primary'>#</span>{title}</Link>
+            <Link onClick={hideHandler} className={`font-normal ${!selected ? 'text-gray' : 'text-[#fff]'} cursor-pointer hover:text-[#fff]`} href={"#" + title}><span className='text-primary'>#</span>{title}</Link>
         </>
     )
 }
