@@ -1,0 +1,35 @@
+{
+	"projects": [
+		{
+			"name": "Ematchi",
+			"description": "Ematchi is a simple game made by Svelte and TailwindCSS",
+			"tech": ["HTML", "CSS", "Svelte", "Typescript", "TailwindCSS"],
+			"live": "https://ematchi-oh2k5157p-cabouelw.vercel.app/",
+			"github": "https://github.com/cabouelw/ematchi",
+			"img": "https://user-images.githubusercontent.com/58864054/259762634-6cbdda59-b093-4dbc-8a00-4e860a492e13.png"
+		},
+		{
+			"name": "PONGMANIA",
+			"description": "Transcendence (PONGMANIA) is a 42 school project, to learn about web developpement and SPA. The goal is to create a web app to play Ping Pong, and socialize with other users.",
+			"tech": ["HTML", "CSS", "NextJs", "NestJS", "Typescript", "PostgreSQL"],
+			"live": null,
+			"github": "https://github.com/cabouelw/ft_transcendence",
+			"img": "https://raw.githubusercontent.com/cabouelw/ft_transcendence/main/pongmaniaScreenshots/profile.png"
+		}
+	],
+    "skills": [
+		{
+			"title": "Languages",
+			"skills": ["Javascript", "Typescript", "C", "C#", "C++"]
+			
+		},
+		{
+			"title": "Frameworks",
+			"skills": ["ReactJS", "NextJS", "Svelte", "SvelteKit"]
+		},
+		{
+			"title": "Others",
+			"skills": ["HTML", "CSS", "Tailwind", "MaterialUI", "Git", "Github", "bash", "Makefile", "Docker", "Nginx"]
+		}
+	]
+}

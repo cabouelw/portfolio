@@ -4,7 +4,7 @@ import burger from "../public/Icons/menu.svg"
 import exit from "../public/Icons/Exit.svg"
 import git from '../public/Icons/git.svg';
 import linkedin from '../public/Icons/Linkedin.svg';
-import email from '../public/Icons/Email.svg';
+import email from '../public/Icons/email.svg';
 import discord from '../public/Icons/Discord.svg';
 import Link from 'next/link';
 

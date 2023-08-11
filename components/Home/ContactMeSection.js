@@ -1,5 +1,5 @@
-import discord from "../../public/Icons/Discord.png"
-import email from "../../public/Icons/email.png"
+import discord from "../../public/Icons/Discord.svg"
+import email from "../../public/Icons/email.svg"
 
 export default function ContactSection() {
     return (

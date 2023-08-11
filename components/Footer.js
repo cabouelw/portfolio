@@ -1,5 +1,5 @@
 import discord from "../public/Icons/Discord.svg"
-import email from "../public/Icons/Email.svg"
+import email from "../public/Icons/email.svg"
 import git from "../public/Icons/git.svg"
 
 export default function Footer() {
