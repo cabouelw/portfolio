@@ -21,7 +21,7 @@ function ContactHeader() {
 }
 function Contact() {
     return <div className="text-gray ">
-        <p className="text-left">I'm actively seeking freelance opportunities, but I'm also open to addressing any other inquiries or requests you might have. Please feel free to reach out to me at your convenience.</p>
+        <p className="text-left">{"I'm actively seeking freelance opportunities, but I'm also open to addressing any other inquiries or requests you might have. Please feel free to reach out to me at your convenience."}</p>
     </div>
 }
 
