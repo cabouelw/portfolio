@@ -4,7 +4,7 @@
 			"name": "Ematchi",
 			"description": "Ematchi is a simple game made by Svelte and TailwindCSS",
 			"tech": ["HTML", "CSS", "Svelte", "Typescript", "TailwindCSS"],
-			"live": "https://ematchi-oh2k5157p-cabouelw.vercel.app/",
+			"live": "ematchi-xi.vercel.app",
 			"github": "https://github.com/cabouelw/ematchi",
 			"img": "https://user-images.githubusercontent.com/58864054/259762634-6cbdda59-b093-4dbc-8a00-4e860a492e13.png"
 		},
