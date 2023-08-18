@@ -14,7 +14,7 @@
 			"tech": ["HTML", "CSS", "NextJs", "NestJS", "Typescript", "PostgreSQL"],
 			"live": null,
 			"github": "https://github.com/cabouelw/ft_transcendence",
-			"img": "https://raw.githubusercontent.com/cabouelw/ft_transcendence/main/pongmaniaScreenshots/profile.png"
+			"img": "./pongmania.png"
 		}
 	],
     "skills": [
