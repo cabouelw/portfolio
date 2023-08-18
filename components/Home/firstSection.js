@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 export default function FirstSection() {
     return (
-        <section className='grid grid-cols-1 justify-items-center gap-8 h-[100vh]' id="home">
+        <section className='grid grid-cols-1 justify-items-center gap-8 h-full md:h-[100vh]' id="home">
             <div className="flex justify-center items-center w-11/12 lg:flex-row flex-col gap-8">
                 <HelloSection />
                 <AboutMe />
@@ -44,8 +44,8 @@ function DoubleQ() {
     return <div className='h-fit w-[80%]'>
         <div className='relative border-2 border-solid border-gray mx-auto mb-12 max-h-max '>
             <div className='absolute left-[1rem] bg-background w-fit h-fit p-[.5rem] top-[-1rem]'><img src={doubleQ.src} /></div>
-            <p className='md:motion-safe:animate-typing  md:overflow-hidden md:whitespace-nowrap px-8 py-7 text-[1rem] text-center  text-[#fff] mx-auto' >With great power comes great electricity bill</p>
-            <div className='p-2 absolute right-0 border-2 border-solid border-gray text-gray'>- Dr. Who</div>
+            <p className='md:motion-safe:animate-typing  md:overflow-hidden md:whitespace-nowrap px-8 py-7 text-[1rem] text-center  text-[#fff] mx-auto' >Everybody should learn to program a computer because it teaches you how to think.</p>
+            <div className='p-2 absolute right-0 border-2 border-solid border-gray text-gray'>- Steve Jobs</div>
             <div className='absolute right-[1rem] bg-background w-fit h-fit p-[.5rem] bottom-[-1rem]'><img src={doubleQ.src} /></div>
         </div>
     </div>
