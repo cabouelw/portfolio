@@ -51,7 +51,7 @@ function DoubleQ() {
     </div>
 }
 
-function ContactForm({ setShow, show }) {
+export function ContactForm({ setShow, show }) {
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
