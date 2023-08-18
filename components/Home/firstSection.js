@@ -23,7 +23,7 @@ function HelloSection() {
     return <>
         <div className="sm:py-[4.6rem] flex flex-col items-center gap-8 w-full text-center lg:text-start ">
             <h2 className='text-title text-[#fff] font-bold'>{"Hi i'm Choaib AbouElWafa,"}<br />{" i'm  a "}<span className='text-primary'>front-end</span> developer</h2>
-            <p className='text-gray'>{"I possess expertise in web development, encompassing :"}<br />{" HTML, CSS, JavaScript, along with proficiency in frameworks such as ReactJS (Next.js) and Svelte."}</p>
+            <p className='text-gray'>{"I possess expertise in web development, encompassing :"}<br />{" HTML, CSS, JavaScript, along with proficiency in frameworks such as ReactJS (Next.js), Svelte and Vue Js."}</p>
             <span className='border-2 border-solid border-primary py-2 px-4 w-fit text-[#fff] font-sans cursor-pointer hover:bg-primary hover:scale-110 sm:inline hidden transition duration-700 ease-in-out' onClick={() => setShow(!show)} >Contact ME!!</span>
         </div>
         <ContactForm show={show} setShow={setShow} />

@@ -25,11 +25,11 @@
 		},
 		{
 			"title": "Frameworks",
-			"skills": ["ReactJS", "NextJS", "Svelte", "SvelteKit"]
+			"skills": ["ReactJS", "NextJS", "Svelte", "SvelteKit", "Vue Js"]
 		},
 		{
 			"title": "Others",
-			"skills": ["HTML", "CSS", "Tailwind", "MaterialUI", "Git", "Github", "bash", "Makefile", "Docker", "Nginx"]
+			"skills": ["HTML", "CSS", "Tailwind", "MaterialUI", "Git", "bash", "Makefile", "Docker", "Nginx"]
 		}
 	]
 }
