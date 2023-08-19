@@ -21,6 +21,7 @@ a {
   font-family: 'Fira Code' !important;
   font-style: normal;
   outline: none !important;
+  scroll-behavior: smooth;
 }
 
 #__next {

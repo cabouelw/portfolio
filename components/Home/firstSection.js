@@ -3,7 +3,7 @@ import Dots from '../../public/Icons/dots.svg'
 import doubleQ from '../../public/Icons/doubleq.svg'
 import imageHome from '../../public/Icons/imagen1.svg'
 import { Button, Card, CardBody, CardFooter, Dialog, Typography } from "@material-tailwind/react";
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 export default function FirstSection() {
     return (
@@ -31,11 +31,36 @@ function HelloSection() {
 }
 
 function AboutMe() {
+    const [scrollY, setScrollY] = useState(0);
+    const onScroll = useCallback(event => {
+        const {  scrollY } = window;
+        if (scrollY > 0 && scrollY < 300)
+        setScrollY(scrollY);
+    }, []);
+
+    useEffect(() => {
+        //add eventlistener to window
+        window.addEventListener("scroll", onScroll, { passive: true });
+        // remove event on unmount to prevent a memory leak with the cleanup
+        return () => {
+            window.removeEventListener("scroll", onScroll, { passive: true });
+        }
+    }, []);
     return <>
-        <div className="relative w-full md:w-1/2 h-fit ">
-            <div className="absolute top-0 left-0 h-1/2 w-1/2"><img src={imageBG.src} className="h-full" ></img></div>
-            <div className="inline-flex relative z-10"><img src={imageHome.src}></img></div>
-            <div className="absolute bottom-1/3 right-0 h-1/3 z-20"><img src={Dots.src} className="h-full" ></img></div>
+        <div className="relative w-full md:w-1/2 h-fit " style={{
+            paddingBottom: `${scrollY / 2}px`,
+            paddingTop: `${scrollY / 2}px`,
+        }} >
+            <div className="absolute top-0 left-0  " style={{
+                scale: `${scrollY / 1000 + 1}`
+            }} ><img src={imageBG.src} className="h-full" ></img></div>
+            <div className="inline-flex relative z-10" style={{
+                scale: `${scrollY / 1000 + 1}`
+            }}><img src={imageHome.src}></img></div>
+            <div className="absolute bottom-1/3 right-0 h-1/2 z-20" style={{
+                right: `${scrollY / 2}px`,
+                scale: `${scrollY / 1000 + 1}`
+            }} ><img src={Dots.src} className="h-full" ></img></div>
         </div>
     </>
 }
@@ -92,8 +117,6 @@ export function ContactForm({ setShow, show }) {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(name, email, title, message)
-
         sendMessage();
     }
 
