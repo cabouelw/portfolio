@@ -1,23 +1,20 @@
 import { useEffect, useState } from "react"
 import logo from "../../public/Icons/dots.svg"
 import logo1 from "../../public/Icons/logo.svg"
+import { SectionHeader } from "./ContactMeSection"
 
 export default function SkillsSection() {
     return (
-        <section className='w-full py-32' id="skills">
-            <SkillsHeader />
-            <div className="grid lg:grid-cols-2 items-center w-full gap-8 relative md:grid-cols-1 h-full" >
-                <SkillsDesign />
-                <SkillsContainer />
+        <section id="skills" className='snap-start h-screen'>
+            <div data-aos="fade-up" className="h-full flex flex-col justify-start md:gap-36 md:pt-40 items-center  gap-4">
+                <SectionHeader title="Skills" />
+                <div className="grid lg:grid-cols-2 items-center w-full gap-8 relative md:grid-cols-1" >
+                    <SkillsDesign />
+                    <SkillsContainer />
+                </div>
             </div>
         </section>
     )
-}
-
-function SkillsHeader() {
-    return <div className="flex text-5xl mb-8">
-        <span className='font-bold text-lg text-primary flex-none' >#</span><span className='font-bold text-5xl text-[#fff] grow' >Skills <hr className="w-1/3  inline-block align-middle text-primary" /></span>
-    </div>
 }
 
 function SkillsDesign() {
@@ -45,6 +42,6 @@ function SkillsContainer() {
 function Skill({ skill }) {
     return <div className=" border border-gray divide-y text-gray w-full h-auto ">
         <p className=" text-[white] px-4 py-2 text-center " >{skill.title}</p>
-        <p className="px-4 py-2 text-center" >{ skill.skills.join(', ') }</p>
+        <p className="px-4 py-2 text-center" >{skill.skills.join(', ')}</p>
     </div>
 }

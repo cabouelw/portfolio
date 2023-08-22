@@ -5,25 +5,24 @@ import { ContactForm } from "./firstSection";
 
 export default function ContactSection() {
     return (
-        <section className="w-full py-32" id="contacts">
-            <ContactHeader />
-            <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-8 text-center ">
-                <Contact />
-
-                <ContactDetails />
+        <section id="contacts" className='snap-start md:h-[85vh] h-[70vh]'>
+            <div data-aos="fade-up" className="flex md:justify-center justify-start flex-col items-center h-full md:gap-32 gap-4">
+                <SectionHeader title="Contact" />
+                <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-8 text-center h-[80%] md:h-min">
+                    <Contact />
+                    <ContactDetails />
+                </div>
             </div>
         </section>
     );
 }
 
-function ContactHeader() {
+export function SectionHeader({title}) {
     return (
-        <div className="flex text-5xl mb-8">
-            <span className="font-bold text-lg text-primary flex-none">#</span>
-            <span className="font-bold text-5xl text-[#fff] grow">
-                Contacts{" "}
-                <hr className="w-1/5  inline-block align-middle text-primary" />
-            </span>
+        <div className="flex justify-center items-center text-[2rem] font-bold text-white w-full gap-8">
+            <hr className="w-1/5  inline-block align-middle text-primary" />
+            <span><span className="font-bold text-lg text-primary flex-none">#</span>{title}</span>
+            <hr className="w-1/5  inline-block align-middle text-primary" />
         </div>
     );
 }
@@ -50,7 +49,7 @@ function Contact() {
 
 function ContactDetails() {
     return (
-        <div className="p-8 border border-gray w-auto md:justify-self-end text-gray grid gap-4 justify-self-center">
+        <div className="p-8 border border-gray w-auto md:justify-self-end text-gray grid gap-4 items-self-center">
             <p className="text-[white]">Message me here</p>
             <a
                 href="https://discordapp.com/users/831116254248042527"
