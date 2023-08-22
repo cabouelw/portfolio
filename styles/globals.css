@@ -9,6 +9,11 @@ body {
   margin: 0;
   background: #282C33;
   height: 100%;
+  scroll-snap-type: y mandatory;
+  scroll-snap-stop: always;
+  scroll-padding-top: 5rem;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 a {
@@ -21,10 +26,16 @@ a {
   font-family: 'Fira Code' !important;
   font-style: normal;
   outline: none !important;
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
 }
 
 #__next {
   height: 100%;
 }
 
+@media screen and (max-width: 768px) {
+  html,
+  body {
+    font-size: 12px;
+  }
+}
