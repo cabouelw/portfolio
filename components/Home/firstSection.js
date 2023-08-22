@@ -100,7 +100,7 @@ export function ContactForm({ setShow, show }) {
     return <Dialog open={show} handler={() => setShow(!show)} className="bg-background ">
         <Card className="bg-transparent" >
             {send && <div className="bg-green-500 text-white text-center py-2">Message Sent</div>}
-            {!send && <><Typography variant="h1" className="w-full py-2 text-title text-center" style={{ color: "#C778DD" }}>
+            {!send && <><Typography variant="h1" className="w-full py-4 text-title text-center" style={{ color: "#C778DD" }}>
                 Contact Me
             </Typography>
                 <CardBody className="flex flex-col gap-8 bg-transparent">
@@ -110,11 +110,11 @@ export function ContactForm({ setShow, show }) {
                         <input class="rounded w-full p-3 leading-tight bg-transparent focus:outline-none focus:!border-primary focus:shadow-outline focus:ring-blue-500/20 placeholder:text-blue-gray-200 text-[white]" id="Email" type="text" placeholder="Email" value={email}
                             onChange={(e) => setEmail(e.target.value)} />
                     </div>
-                    <input class="rounded w-full p-3 leading-tight bg-transparent focus:outline-none focus:!border-primary focus:shadow-outline focus:ring-blue-500/20 placeholder:text-blue-gray-200 text-[white]" id="Title" type="text" placeholder="Title" value={title}
+                    <input class="rounded w-full p-3 leading-tight bg-transparent focus:outline-none focus:!border-primary focus:shadow-outline focus:ring-blue-500/20 placeholder:text-blue-gray-200 text-[white]" id="Title" type="text" placeholder="Subject" value={title}
                         onChange={(e) => setTitle(e.target.value)} />
-                    <input class="rounded w-full p-3 leading-tight bg-transparent focus:outline-none focus:!border-primary focus:shadow-outline focus:ring-blue-500/20 placeholder:text-blue-gray-200 text-[white]" id="Message" type="text" placeholder="Message" value={message}
+                    <textarea class="rounded w-full p-3 leading-tight bg-transparent focus:outline-none focus:!border-primary focus:shadow-outline focus:ring-blue-500/20 placeholder:text-blue-gray-200 text-[white]" id="Message" type="text" placeholder="Message" value={message}
                         onChange={(e) => setMessage(e.target.value)} />
-                </CardBody>
+				</CardBody>
                 <CardFooter >
                     <Button className="bg-transparent hover:bg-primary border border-gray" onClick={handleSubmit}>Send</Button>
                 </CardFooter></>}
