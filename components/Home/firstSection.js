@@ -8,7 +8,7 @@ import { useState } from 'react';
 export default function FirstSection() {
     return (
         <section  id="home" className='snap-start h-screen grid items-center gap-4' >
-            <div data-aos="fade-down" className="h-full flex flex-col justify-start items-center md:gap-36 md:pt-40 gap-4 pt-4">
+            <div data-aos="fade-down" className="h-full flex flex-col justify-center items-center md:gap-36 gap-4 ">
             <div className="flex justify-center items-center w-11/12 lg:flex-row flex-col gap-8">
                 <HelloSection />
                 <AboutMe />

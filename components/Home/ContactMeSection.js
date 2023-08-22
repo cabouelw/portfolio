@@ -49,7 +49,7 @@ function Contact() {
 
 function ContactDetails() {
     return (
-        <div className="p-8 border border-gray w-auto md:justify-self-end text-gray grid gap-4 items-self-center">
+        <div className="p-8 border border-gray md:w-auto w-[75vw] justify-self-center items-center h-[12rem] md:justify-self-end text-gray grid gap-4 items-self-center">
             <p className="text-[white]">Message me here</p>
             <a
                 href="https://discordapp.com/users/831116254248042527"

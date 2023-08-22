@@ -5,7 +5,7 @@ import { SectionHeader } from "./ContactMeSection";
 export default function ProjectSection() {
     return (
         <section  id="works" className='snap-start h-screen'>
-            <div data-aos="fade-up" className="h-full flex flex-col justify-start md:gap-36 md:pt-40 items-center gap-4 ">
+            <div data-aos="fade-up" className="h-full flex flex-col justify-center md:gap-36  items-center gap-4 ">
             <SectionHeader title="projects" />
             <ProjectList />
             </div>

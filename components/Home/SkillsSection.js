@@ -6,7 +6,7 @@ import { SectionHeader } from "./ContactMeSection"
 export default function SkillsSection() {
     return (
         <section id="skills" className='snap-start h-screen'>
-            <div data-aos="fade-up" className="h-full flex flex-col justify-start md:gap-36 md:pt-40 items-center  gap-4">
+            <div data-aos="fade-up" className="h-full flex flex-col justify-center md:gap-36 items-center gap-4">
                 <SectionHeader title="Skills" />
                 <div className="grid lg:grid-cols-2 items-center w-full gap-8 relative md:grid-cols-1" >
                     <SkillsDesign />

@@ -5,7 +5,7 @@ import { SectionHeader } from "./ContactMeSection"
 export default function AboutMeSection() {
     return (
         <section id="about-me" className="snap-start h-screen ">
-            <div data-aos="fade-up" className="h-full flex flex-col justify-start md:gap-36 md:pt-40 items-center gap-4 ">
+            <div data-aos="fade-up" className="h-full flex flex-col justify-center md:gap-36 items-center gap-4 ">
                 <SectionHeader title="About-Me" />
                 <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-16" >
                     <AboutMe />
