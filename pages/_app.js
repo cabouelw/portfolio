@@ -1,11 +1,9 @@
-import { StrictMode } from 'react'
+import { StrictMode, useEffect } from 'react'
 import AppWrapper from '../components/AppWrapper'
-import '../styles/globals.css'
 import { ThemeProvider } from "@material-tailwind/react";
 import aos from 'aos'
 import 'aos/dist/aos.css'
-import "../styles/globals.css";
-import { useEffect } from 'react';
+import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
