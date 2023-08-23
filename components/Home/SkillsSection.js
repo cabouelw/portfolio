@@ -35,7 +35,7 @@ function SkillsContainer() {
             .then((json) => setSkills(json.skills));
     }, [])
     return <div className="grid grid-cols-2 grid-rows-2 gap-8">
-        {skills.map((skill, index) => <Skill skill={skill} key={skill.name} />)}
+        {skills.map((skill, index) => <Skill skill={skill} key={skill.title} />)}
     </div>
 }
 

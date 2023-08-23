@@ -5,7 +5,7 @@ import { ContactForm } from "./firstSection";
 
 export default function ContactSection() {
     return (
-        <section id="contacts" className='snap-start md:h-[85vh] h-[70vh]'>
+        <section id="contacts" className='snap-start md:h-[80vh] h-[70vh]'>
             <div data-aos="fade-up" className="flex md:justify-center justify-start flex-col items-center h-full md:gap-32 gap-4">
                 <SectionHeader title="Contact" />
                 <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-8 text-center h-[80%] md:h-min">

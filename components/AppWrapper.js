@@ -5,8 +5,6 @@ import email from '../public/Icons/email.svg';
 import discord from '../public/Icons/discord.svg';
 import imageBG from '../public/Icons/imagebg.svg'
 import Footer from "./Footer";
-import { useCallback, useEffect, useState } from "react";
-
 
 const AppWrapper = ({ children }) => {
     return (

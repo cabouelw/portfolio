@@ -1,5 +1,4 @@
 import logo from "../../public/Icons/dots.svg"
-import logo1 from "../../public/Icons/aboutme.png"
 import { SectionHeader } from "./ContactMeSection"
 
 export default function AboutMeSection() {
@@ -18,7 +17,7 @@ export default function AboutMeSection() {
 
 function AboutMe() {
     return <div className="text-gray grid grid-cols-1 gap-8 items-center">
-        <p>Hello, i’m Choaib!<br /><br />
+        <p>Hello, I’m Choaib!<br /><br />
 
             I’m a self-taught front-end developer based in Berrechid, Morocco. I can develop responsive websites from scratch and raise them into modern user-friendly web experiences.<br /><br />
 
