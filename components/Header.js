@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react';
 import burger from "../public/Icons/menu.svg"
 import exit from "../public/Icons/exit.svg"
@@ -8,36 +7,64 @@ import email from '../public/Icons/email.svg';
 import discord from '../public/Icons/discord.svg';
 import Link from 'next/link';
 
-const NavTo = ({ title, hideHandler }) => {
-    const router = useRouter();
-    const path = router.asPath;
-    const [selected, setSelected] = useState(false);
 
-    useEffect(() => {
-        if (path.includes(title) || path === '/' && title === 'home') setSelected(true);
-        else setSelected(false);
-    }, [path])
+const NavTo = ({ title, hideHandler }) => {
 
     return (
         <>
-            <Link onClick={hideHandler} className={`font-normal ${!selected ? 'text-gray' : 'text-[#fff]'} cursor-pointer hover:text-[#fff]`} href={"#" + title}><span className='text-primary'>#</span>{title}</Link>
+            <Link onClick={hideHandler} className={`linkNav font-normal text-gray cursor-pointer hover:text-[#fff] `} href={"#" + title}><span className={`text-primary ${title}`}>#</span>{title}</Link>
         </>
     )
 }
 
 const NavContainer = ({ ClassName, hideHandler }) => {
     return (
-        <div className={ClassName}>
+        <nav className={ClassName} >
             <NavTo title="home" hideHandler={hideHandler} />
             <NavTo title="works" hideHandler={hideHandler} />
             <NavTo title="skills" hideHandler={hideHandler} />
             <NavTo title="about-me" hideHandler={hideHandler} />
             <NavTo title="contacts" hideHandler={hideHandler} />
-        </div>)
+        </nav>)
 }
 
 const Header = () => {
     const [show, setShow] = useState(false);
+
+    useEffect(() => {
+        let section = document.querySelectorAll('section');
+        let lists = document.querySelectorAll('.linkNav');
+        function activeLink(li) {
+            lists.forEach((item) => item.classList.remove('active'));
+            li.classList.add('active');
+        }
+        lists.forEach((item) =>
+            item.addEventListener('click', function () {
+                activeLink(this);
+            }));
+        const scrollHandler = () => {
+            section.forEach(sec => {
+                let top = document.body.scrollTop || document.documentElement.scrollTop;
+                let offset = sec.offsetTop;
+                let height = sec.offsetHeight;
+                let id = sec.getAttribute('id');
+                if (top + 100 >= offset && top < (offset + height)) {
+                    const target2 = document.querySelector("." + id).parentElement;
+                    activeLink(target2);
+                }
+            })
+        }
+        scrollHandler();
+        window.document.body.addEventListener("scroll", scrollHandler);
+        return () => {
+            lists.forEach((item) =>
+                item.removeEventListener('click', function () {
+                    activeLink(this);
+                }));
+            window.document.body.removeEventListener("scroll", scrollHandler);
+        }
+    }, [])
+
     return (
         <header className="p-6 px-4 grid grid-cols-5 relative h-fit" >
             <div className="flex items-center gap-2 col-start-1 sm:col-span-1 col-span-2" >
@@ -51,10 +78,10 @@ const Header = () => {
             <div className='w-full z-50 flex flex-col col-start-1 col-span-6' >
                 {show && <><NavContainer hideHandler={() => setShow(false)} ClassName="flex flex-col items-start gap-8 sm:hidden pt-8" />
                     <div className="flex items-center gap-1 justify-between w-2/3 mx-auto my-8" >
-                    <a href="https://github.com/cabouelw" ><img src={git.src} /></a>
-                    <a href="https://www.linkedin.com/in/choaibabouelwafa/" ><img src={linkedin.src} /></a>
-                    <a href="https://discordapp.com/users/831116254248042527" ><img src={discord.src} /></a>
-                    <a href="mailto:cabouelw@gmail.com" ><img src={email.src} /></a>
+                        <a href="https://github.com/cabouelw" ><img src={git.src} /></a>
+                        <a href="https://www.linkedin.com/in/choaibabouelwafa/" ><img src={linkedin.src} /></a>
+                        <a href="https://discordapp.com/users/831116254248042527" ><img src={discord.src} /></a>
+                        <a href="mailto:cabouelw@gmail.com" ><img src={email.src} /></a>
                     </div></>
                 }
             </div>
