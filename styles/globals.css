@@ -18,6 +18,7 @@ body {
 
 .active {
   color: #fff !important;
+  font-weight: 700;
 }
 
 a {
