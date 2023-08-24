@@ -7,13 +7,13 @@ import { useState } from 'react';
 
 export default function FirstSection() {
     return (
-        <section  id="home" className='snap-start h-screen grid items-center gap-4' >
+        <section id="home" className='snap-start h-screen grid items-center gap-4' >
             <div data-aos="fade-down" className="h-full flex flex-col justify-center items-center md:gap-36 gap-4 ">
-            <div className="flex justify-center items-center w-11/12 lg:flex-row flex-col gap-8">
-                <HelloSection />
-                <AboutMe />
-            </div>
-            <DoubleQ />
+                <div className="flex justify-center items-center w-11/12 lg:flex-row flex-col gap-8">
+                    <HelloSection />
+                    <AboutMe />
+                </div>
+                <DoubleQ />
             </div>
         </section>
     )
@@ -25,8 +25,10 @@ function HelloSection() {
     return <>
         <div className="sm:py-[4.6rem] flex flex-col items-center gap-8 w-full text-center lg:text-start ">
             <h2 className='text-title text-[#fff] font-bold'>{"Hi I'm Choaib AbouElWafa,"}<br />{" I'm  a "}<span className='text-primary'>front-end</span> developer</h2>
-            <p className='text-gray'>{"I possess expertise in web development, encompassing :"}<br />{" HTML, CSS, JavaScript, along with proficiency in frameworks such as ReactJS (Next.js), Svelte and Vue Js."}</p>
-            <span className='border-2 border-solid border-primary py-2 px-4 w-fit text-[#fff] font-sans cursor-pointer hover:bg-primary hover:scale-110 sm:inline hidden transition duration-700 ease-in-out' onClick={() => setShow(!show)} >Contact ME!!</span>
+            <p className='text-gray'>{"I possess expertise in web development, encompassing :"}<br />{" HTML, CSS, JavaScript, along with proficiency in frameworks such as ReactJS (Next.js) and Svelte."}</p>
+            <div className='flex gap-8'>
+                <span className='border-2 border-solid border-primary py-2 px-4 w-fit text-[#fff] font-sans cursor-pointer hover:bg-primary hover:scale-110 sm:inline hidden transition duration-700 ease-in-out' onClick={() => setShow(!show)} >Contact ME!!</span>
+                <span className='border-2 border-solid border-primary py-2 px-4 w-fit text-[#fff] font-sans cursor-pointer bg-primary bg-opacity-40 hover:bg-opacity-100 hover:scale-110 sm:inline hidden transition duration-700 ease-in-out' ><a target="_blank" href="https://drive.google.com/file/d/12p4Pjr6Ra1n0EUMSO3EM9i1G7DAgGoNy" rel="noopener noreferrer">My Resume {">"}</a></span></div>
         </div>
         <ContactForm show={show} setShow={setShow} />
     </>
@@ -114,7 +116,7 @@ export function ContactForm({ setShow, show }) {
                         onChange={(e) => setTitle(e.target.value)} />
                     <textarea class="rounded w-full p-3 leading-tight bg-transparent focus:outline-none focus:!border-primary focus:shadow-outline focus:ring-blue-500/20 placeholder:text-blue-gray-200 text-[white]" id="Message" type="text" placeholder="Message" value={message}
                         onChange={(e) => setMessage(e.target.value)} />
-				</CardBody>
+                </CardBody>
                 <CardFooter >
                     <Button className="bg-transparent hover:bg-primary border border-gray" onClick={handleSubmit}>Send</Button>
                 </CardFooter></>}

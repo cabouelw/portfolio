@@ -6,7 +6,7 @@ export default function ProjectSection() {
     return (
         <section  id="works" className='snap-start h-screen'>
             <div data-aos="fade-up" className="h-full flex flex-col justify-center md:gap-36  items-center gap-4 ">
-            <SectionHeader title="projects" />
+            <SectionHeader title="Projects" />
             <ProjectList />
             </div>
         </section>
