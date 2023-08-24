@@ -17,7 +17,7 @@ const NavTo = ({ title, hideHandler }) => {
     )
 }
 
-const NavContainer = ({ ClassName, hideHandler }) => {
+const NavContainer = ({ ClassName, hideHandler, activeSection }) => {
     return (
         <nav className={ClassName} >
             <NavTo title="home" hideHandler={hideHandler} />
@@ -48,7 +48,8 @@ const Header = () => {
                 let offset = sec.offsetTop;
                 let height = sec.offsetHeight;
                 let id = sec.getAttribute('id');
-                if (top + 100 >= offset && top < (offset + height)) {
+                console.log(top, offset, height, id);
+                if (top + 300 >= offset && top < (offset + height)) {
                     const target2 = document.querySelector("." + id).parentElement;
                     activeLink(target2);
                 }
