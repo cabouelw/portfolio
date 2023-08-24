@@ -36,8 +36,9 @@ const Header = () => {
         let section = document.querySelectorAll('section');
         let lists = document.querySelectorAll('.linkNav');
         function activeLink(li) {
+            if (!li) return; 
             document.querySelectorAll('.linkNav').forEach((item) => item.classList.remove('active'));
-            li?.classList.add('active');
+            li.classList.add('active');
         }
         lists.forEach((item) =>
             item.addEventListener('click', function () {
