@@ -20,12 +20,12 @@
     "skills": [
 		{
 			"title": "Languages",
-			"skills": ["Javascript", "Typescript", "C", "C#", "C++"]
+			"skills": ["JavaScript", "TypeScript", "C", "C#", "C++"]
 			
 		},
 		{
 			"title": "Frameworks",
-			"skills": ["ReactJS", "NextJS", "Svelte", "SvelteKit", "Vue Js"]
+			"skills": ["ReactJS", "NextJS", "Svelte", "SvelteKit"]
 		},
 		{
 			"title": "Others",
