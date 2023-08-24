@@ -36,8 +36,8 @@ const Header = () => {
         let section = document.querySelectorAll('section');
         let lists = document.querySelectorAll('.linkNav');
         function activeLink(li) {
-            lists.forEach((item) => item.classList.remove('active'));
-            li.classList.add('active');
+            document.querySelectorAll('.linkNav').forEach((item) => item.classList.remove('active'));
+            li?.classList.add('active');
         }
         lists.forEach((item) =>
             item.addEventListener('click', function () {
@@ -49,10 +49,10 @@ const Header = () => {
                 let offset = sec.offsetTop;
                 let height = sec.offsetHeight;
                 let id = sec.getAttribute('id');
-                console.log(top, offset, height, id);
                 if (top + 300 >= offset && top < (offset + height)) {
-                    const target2 = document.querySelector("." + id).parentElement;
-                    activeLink(target2);
+                    const target2 = document.querySelectorAll("." + id);
+                    activeLink(target2[0]?.parentElement);
+                    activeLink(target2[1]?.parentElement);
                 }
             })
         }

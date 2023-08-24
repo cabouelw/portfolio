@@ -27,8 +27,8 @@ function HelloSection() {
             <h2 className='text-title text-[#fff] font-bold'>{"Hi I'm Choaib AbouElWafa,"}<br />{" I'm  a "}<span className='text-primary'>front-end</span> developer</h2>
             <p className='text-gray'>{"I possess expertise in web development, encompassing :"}<br />{" HTML, CSS, JavaScript, along with proficiency in frameworks such as ReactJS (Next.js) and Svelte."}</p>
             <div className='flex gap-8'>
-                <span className='border-2 border-solid border-primary py-2 px-4 w-fit text-[#fff] font-sans cursor-pointer hover:bg-primary hover:scale-110 sm:inline hidden transition duration-700 ease-in-out' onClick={() => setShow(!show)} >Contact ME!!</span>
-                <span className='border-2 border-solid border-primary py-2 px-4 w-fit text-[#fff] font-sans cursor-pointer bg-primary bg-opacity-40 hover:bg-opacity-100 hover:scale-110 sm:inline hidden transition duration-700 ease-in-out' ><a target="_blank" href="https://drive.google.com/file/d/12p4Pjr6Ra1n0EUMSO3EM9i1G7DAgGoNy" rel="noopener noreferrer">My Resume {">"}</a></span></div>
+                <span className='border-2 border-solid border-primary py-2 px-4 w-fit text-[#fff] font-sans cursor-pointer bg-primary bg-opacity-40 hover:bg-opacity-100 hover:scale-110 sm:inline hidden transition duration-700 ease-in-out' onClick={() => setShow(!show)} >Contact ME!!</span>
+                <span className='border-2 border-solid border-primary py-2 px-4 w-fit text-[#fff] font-sans cursor-pointer hover:bg-primary hover:scale-110 sm:inline hidden transition duration-700 ease-in-out' ><a target="_blank" href="https://drive.google.com/file/d/12p4Pjr6Ra1n0EUMSO3EM9i1G7DAgGoNy" rel="noopener noreferrer">My Resume {">"}</a></span></div>
         </div>
         <ContactForm show={show} setShow={setShow} />
     </>
