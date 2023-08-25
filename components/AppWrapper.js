@@ -15,11 +15,11 @@ const AppWrapper = ({ children }) => {
             <div className="w-32 left-[-50px] bottom-2/3 absolute z-0"><img src={imageBG.src} className="h-full" ></img></div>
             <div className="fixed left-2 top-6 w-8 md:flex flex-col items-center gap-1 hidden ">
                 <div className="h-64 w-0.5 bg-gray" />
-                <a href="https://github.com/cabouelw" ><img src={git.src} /></a>
-                <a href="https://www.linkedin.com/in/choaibabouelwafa/" ><img src={linkedin.src} /></a>
-                <a href="https://discordapp.com/users/831116254248042527" ><img src={discord.src} /></a>
-                <a href="mailto:cabouelw@gmail.com" ><img src={email.src} /></a>
-                <a href="https://drive.google.com/file/d/12p4Pjr6Ra1n0EUMSO3EM9i1G7DAgGoNy" ><img src={cv.src} /></a>
+                <a href="https://github.com/cabouelw" ><img src={git.src} title="Github" /></a>
+                <a href="https://www.linkedin.com/in/choaibabouelwafa/" ><img src={linkedin.src} title="Linkedin" /></a>
+                <a href="https://discordapp.com/users/831116254248042527" ><img src={discord.src} title="Discord" /></a>
+                <a href="mailto:cabouelw@gmail.com" ><img src={email.src} title="Email" /></a>
+                <a href="https://drive.google.com/file/d/12p4Pjr6Ra1n0EUMSO3EM9i1G7DAgGoNy" ><img src={cv.src} title="My Resume" /></a>
             </div>
             <div className="w-full sticky top-0 bg-background z-[21]">
                 <Header />

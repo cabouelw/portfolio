@@ -81,11 +81,11 @@ const Header = () => {
             <div className='w-full z-50 flex flex-col col-start-1 col-span-6' >
                 {show && <><NavContainer hideHandler={() => setShow(false)} ClassName="flex flex-col items-start gap-8 sm:hidden pt-8" />
                     <div className="flex items-center gap-1 justify-between w-2/3 mx-auto my-8" >
-                        <a href="https://github.com/cabouelw" ><img src={git.src} /></a>
-                        <a href="https://www.linkedin.com/in/choaibabouelwafa/" ><img src={linkedin.src} /></a>
-                        <a href="https://discordapp.com/users/831116254248042527" ><img src={discord.src} /></a>
-                        <a href="mailto:cabouelw@gmail.com" ><img src={email.src} /></a>
-                        <a href="https://drive.google.com/file/d/12p4Pjr6Ra1n0EUMSO3EM9i1G7DAgGoNy" ><img src={cv.src} /></a>
+                    <a href="https://github.com/cabouelw" ><img src={git.src} title="Github" /></a>
+                    <a href="https://www.linkedin.com/in/choaibabouelwafa/" ><img src={linkedin.src} title="Linkedin" /></a>
+                    <a href="https://discordapp.com/users/831116254248042527" ><img src={discord.src} title="Discord" /></a>
+                    <a href="mailto:cabouelw@gmail.com" ><img src={email.src} title="Email" /></a>
+                    <a href="https://drive.google.com/file/d/12p4Pjr6Ra1n0EUMSO3EM9i1G7DAgGoNy" ><img src={cv.src} title="My Resume" /></a>
                     </div></>
                 }
             </div>
