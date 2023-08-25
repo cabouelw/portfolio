@@ -81,7 +81,7 @@ export function ContactForm({ setShow, show }) {
             body: JSON.stringify(body),
         }
 
-        fetch("https://eopl3975e2r25z8.m.pipedream.net", options).then((res) => {
+        fetch(process.env.EMAIL_URL, options).then((res) => {
             setSend(true)
             setTimeout(() => {
                 setSend(false)
@@ -107,14 +107,14 @@ export function ContactForm({ setShow, show }) {
             </Typography>
                 <CardBody className="flex flex-col gap-8 bg-transparent">
                     <div className="flex gap-4">
-                        <input class="rounded w-full p-3 leading-tight bg-transparent focus:outline-none focus:!border-primary focus:shadow-outline focus:ring-blue-500/20 placeholder:text-blue-gray-200 text-[white]" id="name" type="text" placeholder="Name" value={name}
+                        <input className="rounded w-full p-3 leading-tight bg-transparent focus:outline-none focus:!border-primary focus:shadow-outline focus:ring-blue-500/20 placeholder:text-blue-gray-200 text-[white]" id="name" type="text" placeholder="Name" value={name}
                             onChange={(e) => setName(e.target.value)} />
-                        <input class="rounded w-full p-3 leading-tight bg-transparent focus:outline-none focus:!border-primary focus:shadow-outline focus:ring-blue-500/20 placeholder:text-blue-gray-200 text-[white]" id="Email" type="text" placeholder="Email" value={email}
+                        <input className="rounded w-full p-3 leading-tight bg-transparent focus:outline-none focus:!border-primary focus:shadow-outline focus:ring-blue-500/20 placeholder:text-blue-gray-200 text-[white]" id="Email" type="text" placeholder="Email" value={email}
                             onChange={(e) => setEmail(e.target.value)} />
                     </div>
-                    <input class="rounded w-full p-3 leading-tight bg-transparent focus:outline-none focus:!border-primary focus:shadow-outline focus:ring-blue-500/20 placeholder:text-blue-gray-200 text-[white]" id="Title" type="text" placeholder="Subject" value={title}
+                    <input className="rounded w-full p-3 leading-tight bg-transparent focus:outline-none focus:!border-primary focus:shadow-outline focus:ring-blue-500/20 placeholder:text-blue-gray-200 text-[white]" id="Title" type="text" placeholder="Subject" value={title}
                         onChange={(e) => setTitle(e.target.value)} />
-                    <textarea class="rounded w-full p-3 leading-tight bg-transparent focus:outline-none focus:!border-primary focus:shadow-outline focus:ring-blue-500/20 placeholder:text-blue-gray-200 text-[white]" id="Message" type="text" placeholder="Message" value={message}
+                    <textarea className="rounded w-full p-3 leading-tight bg-transparent focus:outline-none focus:!border-primary focus:shadow-outline focus:ring-blue-500/20 placeholder:text-blue-gray-200 text-[white]" id="Message" type="text" placeholder="Message" value={message}
                         onChange={(e) => setMessage(e.target.value)} />
                 </CardBody>
                 <CardFooter >
