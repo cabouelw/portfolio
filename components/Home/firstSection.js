@@ -82,6 +82,7 @@ export function ContactForm({ setShow, show }) {
         }
 
         fetch(process.env.EMAIL_URL, options).then((res) => {
+            console.log(process.env.EMAIL_URL);
             setSend(true)
             setTimeout(() => {
                 setSend(false)
