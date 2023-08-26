@@ -3,7 +3,8 @@ import Dots from '../../public/Icons/dots.svg'
 import doubleQ from '../../public/Icons/doubleq.svg'
 import imageHome from '../../public/Icons/imagen1.svg'
 import { Button, Card, CardBody, CardFooter, Dialog, Typography } from "@material-tailwind/react";
-import { useState } from 'react';
+import { useReducer, useState } from 'react';
+import { emailRegex, initForm, reducer } from '../../lib/form';
 
 export default function FirstSection() {
     return (
@@ -55,23 +56,23 @@ function DoubleQ() {
     </div>
 }
 
-export function ContactForm({ setShow, show }) {
+const Input = ({ placeholder, value, onChange, onBlur, error, name }) => {
+    // console.log(value, onChange, onBlur);
+    return <input name={name} className="rounded w-full p-3 leading-tight bg-transparent focus:outline-none focus:!border-primary focus:shadow-outline focus:ring-blue-500/20 placeholder:text-blue-gray-200 text-[white]" placeholder={placeholder} value={value.value} onBlur={onBlur} onChange={onChange} style={{ borderColor: (error) ? "red" : "" }} />
+}
 
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [title, setTitle] = useState('')
-    const [message, setMessage] = useState('')
+export function ContactForm({ setShow, show }) {
+    const [form, dispatch] = useReducer(reducer, initForm)
     const [send, setSend] = useState(false)
 
     const sendMessage = async () => {
         const headers = new Headers()
         headers.append("Content-Type", "application/json")
-
         const body = {
-            name,
-            email,
-            title,
-            message
+            "name": form.name,
+            "email": form.email,
+            "subject": form.title,
+            "message": form.message
         }
 
         const options = {
@@ -86,40 +87,37 @@ export function ContactForm({ setShow, show }) {
             setTimeout(() => {
                 setSend(false)
                 setShow(false)
-                setName('')
-                setEmail('')
-                setTitle('')
-                setMessage('')
             }, 2000)
         })
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        if (form.emailError || !form.email.length || form.nameError || form.messageError || form.titleError)
+            return;
         sendMessage();
     }
 
-    return <Dialog open={show} handler={() => setShow(!show)} className="bg-background ">
-        <Card className="bg-transparent" >
-            {send && <div className="bg-green-500 text-white text-center py-2">Message Sent</div>}
-            {!send && <><Typography variant="h1" className="w-full py-4 text-title text-center" style={{ color: "#C778DD" }}>
-                Contact Me
-            </Typography>
-                <CardBody className="flex flex-col gap-8 bg-transparent">
-                    <div className="flex gap-4">
-                        <input className="rounded w-full p-3 leading-tight bg-transparent focus:outline-none focus:!border-primary focus:shadow-outline focus:ring-blue-500/20 placeholder:text-blue-gray-200 text-[white]" id="name" type="text" placeholder="Name" value={name}
-                            onChange={(e) => setName(e.target.value)} />
-                        <input className="rounded w-full p-3 leading-tight bg-transparent focus:outline-none focus:!border-primary focus:shadow-outline focus:ring-blue-500/20 placeholder:text-blue-gray-200 text-[white]" id="Email" type="text" placeholder="Email" value={email}
-                            onChange={(e) => setEmail(e.target.value)} />
-                    </div>
-                    <input className="rounded w-full p-3 leading-tight bg-transparent focus:outline-none focus:!border-primary focus:shadow-outline focus:ring-blue-500/20 placeholder:text-blue-gray-200 text-[white]" id="Title" type="text" placeholder="Subject" value={title}
-                        onChange={(e) => setTitle(e.target.value)} />
-                    <textarea className="rounded w-full p-3 leading-tight bg-transparent focus:outline-none focus:!border-primary focus:shadow-outline focus:ring-blue-500/20 placeholder:text-blue-gray-200 text-[white]" id="Message" type="text" placeholder="Message" value={message}
-                        onChange={(e) => setMessage(e.target.value)} />
-                </CardBody>
-                <CardFooter >
-                    <Button className="bg-transparent hover:bg-primary border border-gray" onClick={handleSubmit}>Send</Button>
-                </CardFooter></>}
-        </Card>
-    </Dialog>
+    return (
+        <Dialog open={show} handler={() => setShow(!show)} className="bg-background ">
+            <Card className="bg-transparent" >
+                {send && <div className="bg-green-500 text-white text-center py-2">Message Sent</div>}
+                {!send && <><Typography variant="h1" className="w-full py-4 text-title text-center" style={{ color: "#C778DD" }}>
+                    Contact Me
+                </Typography>
+                    <CardBody className="flex flex-col gap-8 bg-transparent">
+                        <div className="flex gap-4">
+                            <Input placeholder="Name" name="name" value={form.name} error={form.nameError} onChange={(e) => (dispatch({ type: "typing", field: e.target.name, payload: e.target.value }))} onBlur={(e) => dispatch({ type: "error", field: e.target.name, payload: (e.target.value < 2) })} />
+                            <Input placeholder="Email" name="email" value={form.email} error={form.emailError} onChange={(e) => (dispatch({ type: "typing", field: e.target.name, payload: e.target.value }))} onBlur={(e) => dispatch({ type: "error", field: e.target.name, payload: !emailRegex.test(e.target.value) })} />
+                        </div>
+                        <Input placeholder="Subject" name="title" value={form.title} error={form.titleError} onChange={(e) => (dispatch({ type: "typing", field: e.target.name, payload: e.target.value }))} onBlur={(e) => dispatch({ type: "error", field: e.target.name, payload: (e.target.value < 2) })} />
+                        <textarea name='message' className="rounded w-full p-3 leading-tight bg-transparent focus:outline-none focus:!border-primary focus:shadow-outline focus:ring-blue-500/20 placeholder:text-blue-gray-200 text-[white]" id="Message" type="text" placeholder="Message" value={form.message} style={{ borderColor: (form.messageError) ? "red" : "" }} onChange={(e) => (dispatch({ type: "typing", field: e.target.name, payload: e.target.value }))} onBlur={(e) => dispatch({ type: "error", field: e.target.name, payload: (e.target.value < 2) })} />
+                    </CardBody>
+                    <CardFooter className='flex gap-4 items-center'>
+                        <Button className="bg-transparent hover:bg-primary border border-gray" onClick={handleSubmit}>Send</Button>
+                        {form.emailError && <span className='text-red-400 text-[.7rem] text-right' >Please {form.name} type your email correctly</span>}
+                    </CardFooter></>}
+            </Card>
+        </Dialog>
+    )
 }
