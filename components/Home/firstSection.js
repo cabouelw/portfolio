@@ -114,7 +114,7 @@ export function ContactForm({ setShow, show }) {
                         <textarea name='message' className="rounded w-full p-3 leading-tight bg-transparent focus:outline-none focus:!border-primary focus:shadow-outline focus:ring-blue-500/20 placeholder:text-blue-gray-200 text-[white]" id="Message" type="text" placeholder="Message" value={form.message} style={{ borderColor: (form.messageError) ? "red" : "" }} onChange={(e) => (dispatch({ type: "typing", field: e.target.name, payload: e.target.value }))} onBlur={(e) => dispatch({ type: "error", field: e.target.name, payload: (e.target.value < 2) })} />
                     </CardBody>
                     <CardFooter className='flex gap-4 items-center'>
-                        <Button className="bg-transparent hover:bg-primary border border-gray" onClick={handleSubmit}>Send</Button>
+                        <Button disabled={form.emailError || !form.email.length || form.nameError || form.messageError || form.titleError} className="bg-transparent hover:bg-primary border border-gray" onClick={handleSubmit}>Send</Button>
                         {form.emailError && <span className='text-red-400 text-[.7rem] text-right' >Please {form.name} type your email correctly</span>}
                     </CardFooter></>}
             </Card>
