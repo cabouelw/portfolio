@@ -85,7 +85,7 @@ const Header = () => {
                     <a href="https://www.linkedin.com/in/choaibabouelwafa/" ><img src={linkedin.src} title="Linkedin" /></a>
                     <a href="https://discordapp.com/users/831116254248042527" ><img src={discord.src} title="Discord" /></a>
                     <a href="mailto:cabouelw@gmail.com" ><img src={email.src} title="Email" /></a>
-                    <a href="https://drive.google.com/file/d/12p4Pjr6Ra1n0EUMSO3EM9i1G7DAgGoNy" ><img src={cv.src} title="My Resume" /></a>
+                    <a href="https://drive.google.com/file/d/1DsIJearwAlABI-ZVYSLmH_U-PaJNRVAx/view?usp=drive_link" ><img src={cv.src} title="My Resume" /></a>
                     </div></>
                 }
             </div>

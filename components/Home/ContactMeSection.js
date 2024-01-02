@@ -44,7 +44,7 @@ function Contact() {
             >
                 Contact ME!!
             </span>
-            <span className='border-2 border-solid border-primary py-2 px-4 w-fit text-[#fff] font-sans cursor-pointer hover:bg-primary md:hidden hover:scale-110 transition duration-700 ease-in-out' ><a target="_blank" href="https://drive.google.com/file/d/1DsIJearwAlABI-ZVYSLmH_U-PaJNRVAx/view?usp=sharing" rel="noopener noreferrer">My Resume {">"}</a></span></div>
+            <span className='border-2 border-solid border-primary py-2 px-4 w-fit text-[#fff] font-sans cursor-pointer hover:bg-primary md:hidden hover:scale-110 transition duration-700 ease-in-out' ><a target="_blank" href="https://drive.google.com/file/d/1DsIJearwAlABI-ZVYSLmH_U-PaJNRVAx/view?usp=drive_link" rel="noopener noreferrer">My Resume {">"}</a></span></div>
         </div>
     );
 }
