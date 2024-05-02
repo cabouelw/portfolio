@@ -36,7 +36,7 @@ const Header = () => {
         let section = document.querySelectorAll('section');
         let lists = document.querySelectorAll('.linkNav');
         function activeLink(li) {
-            if (!li) return; 
+            if (!li) return;
             document.querySelectorAll('.linkNav').forEach((item) => item.classList.remove('active'));
             li.classList.add('active');
         }
@@ -81,11 +81,11 @@ const Header = () => {
             <div className='w-full z-50 flex flex-col col-start-1 col-span-6' >
                 {show && <><NavContainer hideHandler={() => setShow(false)} ClassName="flex flex-col items-start gap-8 sm:hidden pt-8" />
                     <div className="flex items-center gap-1 justify-between w-2/3 mx-auto my-8" >
-                    <a href="https://github.com/cabouelw" ><img src={git.src} title="Github" /></a>
-                    <a href="https://www.linkedin.com/in/choaibabouelwafa/" ><img src={linkedin.src} title="Linkedin" /></a>
-                    <a href="https://discordapp.com/users/831116254248042527" ><img src={discord.src} title="Discord" /></a>
-                    <a href="mailto:cabouelw@gmail.com" ><img src={email.src} title="Email" /></a>
-                    <a href="https://drive.google.com/file/d/1DsIJearwAlABI-ZVYSLmH_U-PaJNRVAx/view?usp=drive_link" ><img src={cv.src} title="My Resume" /></a>
+                        <a href="https://github.com/cabouelw" ><img src={git.src} title="Github" /></a>
+                        <a href="https://www.linkedin.com/in/choaibabouelwafa/" ><img src={linkedin.src} title="Linkedin" /></a>
+                        <a href="https://discordapp.com/users/831116254248042527" ><img src={discord.src} title="Discord" /></a>
+                        <a href="mailto:cabouelw@gmail.com" ><img src={email.src} title="Email" /></a>
+                        <a href="ChoaibAbouelwafa.pdf" target="_blank" rel="noopener noreferrer" download><img src={cv.src} title="My Resume" /></a>
                     </div></>
                 }
             </div>
